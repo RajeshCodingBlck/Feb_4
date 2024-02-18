@@ -2,7 +2,7 @@ package Lec_4;
 
 import java.util.Scanner;
 
-public class Question_13 {
+public class Question_15 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -12,9 +12,16 @@ public class Question_13 {
 		int n= s.nextInt();
 		
 		int row=1;
-		
-		int nst=1;
+		int nsp=0;
+		int nst=n;
 		while(row<=2*n-1) {
+			
+			// Print the Space
+			int j=1;
+			while(j<=nsp) {
+				System.out.print(" "+" ");
+				j=j+1;
+			}
 			
 			// Print the Star
 			int i=1;
@@ -22,13 +29,14 @@ public class Question_13 {
 				System.out.print("*"+" ");
 				i=i+1;
 			}
-			
 			// Preparation for Next Row
 			//nst=nst+1;
 			if(row<n) {
-				nst=nst+1;
-			}else {
 				nst=nst-1;
+				nsp=nsp+2;
+			}else {
+				nst=nst+1;
+				nsp=nsp-2;
 			}
 			
 			System.out.println();
