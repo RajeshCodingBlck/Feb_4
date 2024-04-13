@@ -33,6 +33,7 @@ public class Running_Max {
       
       // Print 
       for(int i=0; i<run_max.length;i++) {
+    	  
     	  System.out.print(run_max[i]+" ");
       }
       

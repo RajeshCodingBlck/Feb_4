@@ -1,33 +1,34 @@
-//https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/
-class Solution {
-    public int [] Running_min(int [] arr){
-        
-        int n= arr.length;
-        int [] ans= new int[n];
-        
-        ans[0]= arr[0];
-        
-        for(int i=1; i<n;i++){
-            
-            ans[i]= Math.min(ans[i-1], arr[i]);
-        }
-        
-        return ans;
-    }
-    public int maxProfit(int[] prices) {
-       
-     
-        int [] running_min=Running_min(prices);
-       
-        int overall_max=0;
-        for(int sell=1; sell<prices.length;sell++){
-            
-            int aabhi_taak_ka_minimum=  running_min[sell-1];
-            
-            int curr_profit= prices[sell]-aabhi_taak_ka_minimum;
-            overall_max= Math.max(overall_max,curr_profit );
-        }
-        
-        return overall_max;
-    }
+package Array_question;
+
+public class Buy_and_sell {
+    
+//	https://leetcode.com/submissions/detail/1219015796/
+	class Solution {
+	    public int maxProfit(int[] prices) {
+	        
+	  int max_profit=0;   
+	for(int buy=0; buy<prices.length;buy++){
+	         
+	    for(int sell=buy+1; sell<prices.length;sell++)
+	    {
+	      
+	    
+	     int curr_profit= prices[sell]-prices[buy];
+	      // System.out.println("Buy at "+ buy + " sell at "+ sell+ " profit is"+ curr_profit); 
+	        
+	        max_profit= Math.max(curr_profit, max_profit);
+	        
+	        
+	    }
+	    }
+	        
+	        return max_profit;
+	        
+	}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
 }
