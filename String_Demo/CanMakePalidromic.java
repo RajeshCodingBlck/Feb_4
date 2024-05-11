@@ -9,10 +9,8 @@ public class CanMakePalidromic {
 	    int [] fre= new int[256];
 	    
 	    for(int i=0; i<str.length();i++) {
-	    	
 	    	int ascii= str.charAt(i);
-	    	
-	    	fre[ascii]= fre[ascii]+1;
+	        fre[ascii]= fre[ascii]+1;
 	    }
 	    
 	    int count=0;
@@ -21,6 +19,10 @@ public class CanMakePalidromic {
 	    	
 	    	if(fre[i]%2 ==1) {
 	    		count++;
+	    	}
+	    	
+	    	if(count>1) {
+	    		break;
 	    	}
 	    }
 	    
