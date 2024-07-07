@@ -2,38 +2,41 @@ package Stack;
 
 public class MyStack {
    
-	private int [] arr;
-	private int top; // Index of Top element.
+	protected int [] arr;
+	protected int top; // Index of Top element.
 	
-	MyStack(int size){
+	public MyStack(int size){
 	   arr= new int [size];	
 	   top=-1;
 	}
 	
-	public void push(int val) {
+	public void push(int val) throws Exception  {
 		
 		if(top==arr.length-1) {
-             System.out.println("Kyu Daal raha he");
-             return;
+             //System.out.println("Kyu Daal raha he");
+			Exception obj= new Exception("Stack is Overflow");
+			  throw obj;
+             
 		}
 		top++;
 		arr[top]=val;
 	}
 	
-	public void pop(){
+	public void pop() throws Exception{
 		
 		if(top==-1) {
-			System.out.println("Kyu Nikal raha he");
-			return;
+			throw new Exception("Kyu nikal raha he");
+			
 		}
 		top--;
 	}
 	
-	public int peek() {
+	public int peek() throws Exception{
 		
 		if(top==-1) {
-			System.out.println("Kyu Dekh raha he");
-			return -1;
+			
+			throw new Exception("kyu dekh raha he");
+			
 		}
 		return arr[top];
 	}
