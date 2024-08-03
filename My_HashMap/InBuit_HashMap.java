@@ -1,6 +1,7 @@
 package My_HashMap;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class InBuit_HashMap {
 
@@ -23,11 +24,20 @@ public class InBuit_HashMap {
 		m.put("Sohan", 60);
 		
 		// remove
-//		m.remove("Sohan");
+		m.remove("Sohan");
 		
 		System.out.println(m);
 		
 		System.out.println(m.containsKey("Sohan"));
+		
+		m.put("Mohan", 60);
+		System.out.println(m);
+		
+		
+		HashSet<String> hs= new HashSet();
+		
+		
+		
 		
 		
 		
